@@ -23,7 +23,7 @@ hero/                  le hero du site : le labo souterrain en 3D
   synthese/            la synthèse de tout ce qui a été retenu (synthese.png se glisse dans Figma)
   labo/                le décor du labo : la suite du travail
     rendus/            le labo actuel : plan large dans l'axe, 2-zones/, 3-plan/ (vue de dessus)
-    recherche/         la recherche par zone (bureau, coin projets, atelier, serveurs, architecture, ventilateur, ambiance)
+    recherche/         la recherche par zone (1-bureau … 7-ambiance), puis 8-nouvelle-architecture/ (voir plus bas)
     pour-plus-tard/    sculpture-cristofol/ : la sculpture de Cristòfol (1969, numérisation CC BY), à placer dans le labo
   bureau/              le coin bureau, terminé le 19/11
     rendus/            un dossier par élément retenu, dans l'ordre des étapes (1-bureau … 11-cables), et bureau-complet/
@@ -40,6 +40,12 @@ hero/                  le hero du site : le labo souterrain en 3D
 ## Le labo (la suite)
 
 La base est retenue depuis le 14/11 : une salle à charpente acier avec un ventilateur, en lumière D.
+
+**Le 19/11, on repense l'architecture du labo à zéro.** Vue de dessus, la salle actuelle n'est qu'un rectangle avec des bureaux. On recrée un nouvel espace, puis on y replacera le bureau et sa caméra. La première étape est la recherche, dans `hero/labo/recherche/8-nouvelle-architecture/` :
+- 156 images en 12 thèmes : bases secrètes, cavernes, citernes, bunkers et silos, béton brut, niveaux et passerelles, halls et centrales, souffleries, labos, lumière, plans et coupes, décors de cinéma ;
+- `planche.png` : toutes les images, ce qu'on peut en tirer pour le labo, et les questions. On la refait avec `python3 hero/outils/page_architecture.py` ;
+- `ou-chercher.md` : où chercher et quoi taper pour continuer (sites, mots-clés par thème, lieux, architectes, films) ;
+- `sources.json` : la page d'origine de chaque image (et la licence pour celles de Wikimedia Commons).
 
 - `hero/outils/blender/rendus-labo.sh` refait le labo complet : plan large, zones, lampe, vue de dessus. Il faut environ 10 min sur le M4. Les rendus finis arrivent dans `hero/labo/rendus/`.
 - Pour un essai rapide : `rendus-labo.sh test bureau`.
