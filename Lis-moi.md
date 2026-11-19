@@ -47,6 +47,10 @@ La base est retenue depuis le 14/11 : une salle à charpente acier avec un venti
 - `ou-chercher.md` : où chercher et quoi taper pour continuer (sites, mots-clés par thème, lieux, architectes, films) ;
 - `sources.json` : la page d'origine de chaque image (et la licence pour celles de Wikimedia Commons).
 
+**Une idée mise de côté (19/11) : la caméra au centre.** Une seule pièce et un coin par activité (bureau, projets, atelier…). Chaque coin prend tout l'écran, et la caméra tourne ou se déplace d'un coin à l'autre. La recherche est dans `hero/labo/recherche/9-camera-au-centre/` :
+- 71 images en 6 thèmes : jeux, sites et dioramas, pièces autour d'un centre, décors qui tournent, coins plein cadre, fenêtres sous terre ;
+- `planche.png` : l'idée en plan, cinq façons de passer d'un coin à l'autre, mon avis et les questions. On la refait avec `python3 hero/outils/page_camera.py`.
+
 - `hero/outils/blender/rendus-labo.sh` refait le labo complet : plan large, zones, lampe, vue de dessus. Il faut environ 10 min sur le M4. Les rendus finis arrivent dans `hero/labo/rendus/`.
 - Pour un essai rapide : `rendus-labo.sh test bureau`.
 
