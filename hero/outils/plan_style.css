@@ -1,0 +1,57 @@
+
+@font-face{font-family:"Inter";font-weight:400;src:url(../../polices/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;src:url(../../polices/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;src:url(../../polices/inter-latin-600-normal.woff2) format("woff2")}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#EFEFEF}
+body{font-family:"Inter",sans-serif;color:#111;font-size:13px;line-height:1.5;display:flex;align-items:flex-start;gap:120px;padding:120px;width:max-content}
+.colw{display:flex;flex-direction:column;gap:120px}
+section{background:#fff;padding:40px;display:flex;flex-direction:column;gap:20px}
+.stitle{font-size:15px;font-weight:600}
+.snote{font-size:12px;color:#8A8A8A;margin-top:-14px}
+.row{display:flex;gap:24px;align-items:flex-start}
+.wrap{flex-wrap:wrap}
+.tight{gap:12px}
+.col{display:flex;flex-direction:column;gap:12px}
+figure{display:flex;flex-direction:column;gap:8px}
+figure img{display:block}
+.cap{font-size:12px;color:#6B6B6B;line-height:1.4}
+.lbl{font-size:12px;font-weight:600;color:#111;margin-top:8px}
+.txt{font-size:13px;color:#333}
+ul.list,ol.list{padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:13px;color:#222}
+ol.z{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:13px}
+ol.z b{display:inline-block;width:20px;height:20px;border-radius:10px;background:#111;color:#fff;font-size:11px;font-weight:600;text-align:center;line-height:20px;margin-right:8px}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap}
+.th{object-fit:cover;display:block}
+table{border-collapse:collapse;font-size:13px;width:100%}
+th{text-align:left;font-weight:600;font-size:12px;color:#6B6B6B;border-bottom:1px solid #DDD;padding:8px 12px 8px 0}
+td{border-bottom:1px solid #EEE;padding:8px 12px 8px 0;vertical-align:top;color:#222}
+.sw{display:inline-block;width:14px;height:14px;border:1px solid rgba(0,0,0,.15)}
+.white{width:456px;height:256px;background:#fff;border:1px solid #E2E2E2}
+svg .wall{fill:#C9C9C9;stroke:#111;stroke-width:1}
+svg .o{fill:#fff;stroke:#111;stroke-width:1}
+svg .dark{fill:#111;stroke:#111;stroke-width:1}
+svg .hatch{fill:#E6E6E6;stroke:#111;stroke-width:1}
+svg .dash{fill:none;stroke:#111;stroke-width:1;stroke-dasharray:4 3}
+svg .plant{fill:#DCE7DA;stroke:#4E6B4A;stroke-width:1}
+svg .led{fill:#E0301E;stroke:none}
+svg .l{stroke:#111;stroke-width:1}
+svg .thin{stroke:#111;stroke-width:.6}
+svg .thick{stroke:#111;stroke-width:3}
+svg .dim{stroke:#8A8A8A;stroke-width:.8}
+svg .fov{stroke:#9A9A9A;stroke-width:.8;stroke-dasharray:2 4}
+svg .aim{stroke:#111;stroke-width:.8}
+svg .scroll{stroke:#111;stroke-width:1.2;stroke-dasharray:1 5;stroke-linecap:round}
+svg .cam{fill:#111}
+svg .sb{fill:#111}
+svg .tag{fill:#111}
+svg .tagt{fill:#fff;font-size:11px;font-weight:600;font-family:Inter,sans-serif}
+svg .t{fill:#111;font-size:12px;font-family:Inter,sans-serif}
+svg .small{font-size:11px;fill:#555}
+svg .beam{stroke:#B5B5B5;stroke-width:.8;stroke-dasharray:6 4}
+svg .dashlight{fill:#F4F7FB;stroke:#111;stroke-width:1;stroke-dasharray:5 3}
+svg .glow{fill:#EEF3FA;stroke:#111;stroke-width:1}
+svg .glass{fill:#E9F0F6;stroke:#6E8396;stroke-width:1}
+svg .thickr{fill:#111;stroke:#111;stroke-width:1}
+svg .dashl{stroke:#111;stroke-width:1;stroke-dasharray:5 3}
+.cap{max-width:100%}
