@@ -1,0 +1,218 @@
+[
+ {
+  "file": "tranche-00.png",
+  "color": [
+   0.86,
+   0.85,
+   0.81
+  ],
+  "title": "Grilles"
+ },
+ {
+  "file": "tranche-01.png",
+  "color": [
+   0.05,
+   0.05,
+   0.055
+  ],
+  "title": "Systèmes de signes"
+ },
+ {
+  "file": "tranche-02.png",
+  "color": [
+   0.62,
+   0.06,
+   0.05
+  ],
+  "title": "Interfaces"
+ },
+ {
+  "file": "tranche-03.png",
+  "color": [
+   0.85,
+   0.36,
+   0.08
+  ],
+  "title": "Typographie appliquée"
+ },
+ {
+  "file": "tranche-04.png",
+  "color": [
+   0.03,
+   0.13,
+   0.55
+  ],
+  "title": "Lumière et matière"
+ },
+ {
+  "file": "tranche-05.png",
+  "color": [
+   0.5,
+   0.51,
+   0.5
+  ],
+  "title": "Forme"
+ },
+ {
+  "file": "tranche-06.png",
+  "color": [
+   0.86,
+   0.72,
+   0.12
+  ],
+  "title": "Archives du plan"
+ },
+ {
+  "file": "tranche-07.png",
+  "color": [
+   0.08,
+   0.2,
+   0.15
+  ],
+  "title": "Structures légères"
+ },
+ {
+  "file": "tranche-08.png",
+  "color": [
+   0.55,
+   0.42,
+   0.28
+  ],
+  "title": "Code & image"
+ },
+ {
+  "file": "tranche-09.png",
+  "color": [
+   0.78,
+   0.55,
+   0.55
+  ],
+  "title": "Couleur"
+ },
+ {
+  "file": "tranche-10.png",
+  "color": [
+   0.2,
+   0.2,
+   0.22
+  ],
+  "title": "Espaces"
+ },
+ {
+  "file": "tranche-11.png",
+  "color": [
+   0.92,
+   0.91,
+   0.88
+  ],
+  "title": "Le détail"
+ },
+ {
+  "file": "tranche-12.png",
+  "color": [
+   0.86,
+   0.85,
+   0.81
+  ],
+  "title": "Objets ordinaires"
+ },
+ {
+  "file": "tranche-13.png",
+  "color": [
+   0.05,
+   0.05,
+   0.055
+  ],
+  "title": "Prototypes"
+ },
+ {
+  "file": "tranche-14.png",
+  "color": [
+   0.62,
+   0.06,
+   0.05
+  ],
+  "title": "Échelles"
+ },
+ {
+  "file": "tranche-15.png",
+  "color": [
+   0.85,
+   0.36,
+   0.08
+  ],
+  "title": "Tracés"
+ },
+ {
+  "file": "tranche-16.png",
+  "color": [
+   0.03,
+   0.13,
+   0.55
+  ],
+  "title": "Modulaire"
+ },
+ {
+  "file": "tranche-17.png",
+  "color": [
+   0.5,
+   0.51,
+   0.5
+  ],
+  "title": "Signal"
+ },
+ {
+  "file": "tranche-18.png",
+  "color": [
+   0.86,
+   0.72,
+   0.12
+  ],
+  "title": "Volumes"
+ },
+ {
+  "file": "tranche-19.png",
+  "color": [
+   0.08,
+   0.2,
+   0.15
+  ],
+  "title": "Contraste"
+ },
+ {
+  "file": "tranche-20.png",
+  "color": [
+   0.55,
+   0.42,
+   0.28
+  ],
+  "title": "Béton"
+ },
+ {
+  "file": "tranche-21.png",
+  "color": [
+   0.78,
+   0.55,
+   0.55
+  ],
+  "title": "Écrans"
+ },
+ {
+  "file": "tranche-22.png",
+  "color": [
+   0.2,
+   0.2,
+   0.22
+  ],
+  "title": "Mesures"
+ },
+ {
+  "file": "tranche-23.png",
+  "color": [
+   0.92,
+   0.91,
+   0.88
+  ],
+  "title": "Atlas"
+ }
+]
