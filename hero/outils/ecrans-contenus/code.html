@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lab.ts — studio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.36/dist/codicon.css">
+<style>
+@font-face{font-family:"JetBrains Mono";src:url(jetbrains-mono-latin-400-normal.woff2) format("woff2")}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:810px;overflow:hidden;background:#1f1f1f;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;color:#cccccc}
+.win{display:grid;grid-template-rows:35px 1fr 22px;height:810px}
+.title{background:#181818;border-bottom:1px solid #2b2b2b;display:flex;align-items:center;position:relative}
+.lights{display:flex;gap:8px;padding-left:13px}.lights i{width:12px;height:12px;border-radius:6px;display:block}
+.search{position:absolute;left:50%;transform:translateX(-50%);width:520px;height:24px;border:1px solid #3c3c3c;border-radius:6px;background:#242424;color:#9d9d9d;font-size:12.5px;display:flex;align-items:center;justify-content:center;gap:6px}
+.tright{margin-left:auto;display:flex;gap:14px;padding-right:14px;color:#cccccc;font-size:15px}
+.main{display:grid;grid-template-columns:48px 260px 1fr;min-height:0}
+.act{background:#181818;border-right:1px solid #2b2b2b;display:flex;flex-direction:column;align-items:center;padding-top:6px;gap:2px}
+.act i{font-size:24px;color:#868686;width:48px;height:48px;display:flex;align-items:center;justify-content:center;position:relative}
+.act i.on{color:#d7d7d7}.act i.on:after{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#0078d4}
+.act .badge{position:absolute;right:9px;bottom:9px;background:#0078d4;color:#fff;font:600 9px/14px -apple-system;min-width:14px;height:14px;border-radius:7px;text-align:center;padding:0 3px}
+.side{background:#181818;border-right:1px solid #2b2b2b;display:flex;flex-direction:column}
+.sh{height:35px;display:flex;align-items:center;padding:0 20px;font-size:11px;letter-spacing:.04em;color:#cccccc;justify-content:space-between}
+.sec{height:22px;display:flex;align-items:center;font-size:11px;font-weight:700;gap:2px;padding-left:2px;color:#cccccc}
+.tree div{height:22px;display:flex;align-items:center;gap:6px;white-space:nowrap;color:#cccccc}
+.tree .on{background:#37373d;outline:1px solid #0078d4;outline-offset:-1px}
+.tree .m{color:#e2c08d}.tree .u{color:#73c991}.tree .dim{color:#8b8b8b}
+.tree .tag{margin-left:auto;margin-right:12px;font-size:12px}
+.ic{font-size:14px;width:16px;text-align:center}
+.edwrap{display:grid;grid-template-rows:35px 22px 1fr 180px;min-width:0;background:#1f1f1f}
+.tabs{display:flex;background:#181818;border-bottom:1px solid #2b2b2b}
+.tab{display:flex;align-items:center;gap:6px;padding:0 12px;height:35px;border-right:1px solid #2b2b2b;color:#9d9d9d;font-size:13px}
+.tab.on{background:#1f1f1f;color:#ffffff;border-top:1px solid #0078d4;height:36px}
+.crumbs{display:flex;align-items:center;gap:4px;padding-left:16px;color:#a9a9a9;font-size:12.5px}
+#ed{min-height:0}
+.panel{border-top:1px solid #2b2b2b;background:#181818;display:flex;flex-direction:column}
+.ptabs{height:35px;display:flex;gap:22px;align-items:center;padding-left:20px;font-size:11px;letter-spacing:.04em;color:#9d9d9d}
+.ptabs .on{color:#e7e7e7;border-bottom:1px solid #e7e7e7;padding:9px 0 8px}
+.term{font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:19px;padding:6px 20px;color:#cccccc;white-space:pre}
+.g{color:#23d18b}.b{color:#3b8eea}.y{color:#e5e510}.gr{color:#808080}.c{color:#29b8db}.mg{color:#d670d6}
+.status{background:#181818;border-top:1px solid #2b2b2b;display:flex;align-items:center;font-size:12px;color:#cccccc}
+.status span{padding:0 8px;display:flex;align-items:center;gap:4px;height:22px}
+.status .remote{background:#0078d4;color:#fff;padding:0 10px}
+.status .r{margin-left:auto}
+</style>
+</head>
+<body>
+<div class="win">
+  <div class="title">
+    <div class="lights"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div class="search"><span class="codicon codicon-search" style="font-size:13px"></span>studio</div>
+    <div class="tright"><span class="codicon codicon-layout-sidebar-left"></span><span class="codicon codicon-layout-panel"></span><span class="codicon codicon-layout-sidebar-right-off"></span></div>
+  </div>
+  <div class="main">
+    <div class="act">
+      <i class="codicon codicon-files on" style="color:#e7e7e7"></i><i class="codicon codicon-search"></i><i class="codicon codicon-source-control"><b class="badge">4</b></i>
+      <i class="codicon codicon-debug-alt"></i><i class="codicon codicon-extensions"></i><i class="codicon codicon-remote-explorer"></i>
+      <div style="margin-top:auto"></div><i class="codicon codicon-account"></i><i class="codicon codicon-settings-gear" style="margin-bottom:4px"></i>
+    </div>
+    <div class="side">
+      <div class="sh">EXPLORER <span class="codicon codicon-ellipsis"></span></div>
+      <div class="sec"><span class="codicon codicon-chevron-down"></span>STUDIO</div>
+      <div class="tree" id="tree"></div>
+    </div>
+    <div class="edwrap">
+      <div class="tabs">
+        <div class="tab on"><span class="ic" style="color:#3178c6;font:700 10px -apple-system">TS</span>Lab.ts<span class="codicon codicon-close" style="font-size:13px;margin-left:6px"></span></div>
+        <div class="tab"><span class="ic" style="color:#3178c6;font:700 10px -apple-system">TS</span>Fan.ts</div>
+        <div class="tab"><span class="ic codicon codicon-symbol-misc" style="color:#4fc1ff"></span>Hotspots.tsx</div>
+        <div class="tab"><span class="ic" style="color:#e44d26;font:700 10px -apple-system">◆</span>index.astro</div>
+      </div>
+      <div class="crumbs">src <span class="codicon codicon-chevron-right"></span> scene <span class="codicon codicon-chevron-right"></span> <span style="color:#3178c6;font:700 9px -apple-system">TS</span> Lab.ts <span class="codicon codicon-chevron-right"></span> <span class="codicon codicon-symbol-class" style="color:#ee9d28"></span> Lab <span class="codicon codicon-chevron-right"></span> <span class="codicon codicon-symbol-method" style="color:#b180d7"></span> powerOn</div>
+      <div id="ed" data-wait></div>
+      <div class="panel">
+        <div class="ptabs"><span>PROBLEMS</span><span>OUTPUT</span><span>DEBUG CONSOLE</span><span class="on">TERMINAL</span><span>PORTS</span></div>
+<div class="term"><span class="g">amnd@studio</span> <span class="b">~/studio</span> <span class="mg">(main)</span> $ npm run dev
+<span class="gr">&gt; astro dev --host</span>
+ <span class="c">astro</span>  <span class="g">v5.2.1</span> <span class="gr">ready in</span> 412 ms
+
+ <span class="g">┃</span> Local    <span class="c">http://localhost:4321/</span>
+<span class="gr">14:22:07</span> <span class="y">[vite]</span> hmr update /src/scene/Lab.ts <span class="gr">(x3)</span>
+<span class="gr">14:22:09</span> <span class="g">[lab]</span> scene ready · 184 485 tris · 61 draw calls · 3.8 ms/frame</div>
+      </div>
+    </div>
+  </div>
+  <div class="status">
+    <span class="remote"><span class="codicon codicon-remote"></span></span>
+    <span><span class="codicon codicon-source-control"></span> main*</span><span><span class="codicon codicon-sync"></span></span>
+    <span><span class="codicon codicon-error"></span> 0 <span class="codicon codicon-warning"></span> 0</span>
+    <span class="r">Ln 37, Col 23</span><span>Spaces: 2</span><span>UTF-8</span><span>LF</span><span>{ } TypeScript</span><span><span class="codicon codicon-bell"></span></span>
+  </div>
+</div>
+<script>
+const tree = [
+  [0, 'folder-opened', 'src', '', 'm'], [1, 'folder-opened', 'scene', '', 'm'], [2, 'ts', 'Lab.ts', 'M', 'm on'], [2, 'ts', 'Fan.ts', 'M', 'm'],
+  [2, 'ts', 'Lights.ts', '', ''], [2, 'ts', 'Camera.ts', '', ''], [2, 'ts', 'Hotspots.ts', 'U', 'u'], [1, 'folder', 'ui', '', ''],
+  [1, 'folder', 'pages', '', ''], [1, 'folder', 'styles', '', ''], [0, 'folder-opened', 'public', '', ''], [1, 'folder-opened', 'models', '', ''],
+  [2, 'file', 'lab.glb', '', ''], [2, 'file', 'fan.glb', '', ''], [1, 'folder', 'textures', '', ''], [0, 'file', '.gitignore', '', 'dim'],
+  [0, 'json', 'package.json', '', ''], [0, 'ts', 'astro.config.ts', '', ''], [0, 'ts', 'tsconfig.json', '', ''], [0, 'md', 'README.md', '', '']];
+const el = document.getElementById('tree');
+for (const [d, k, n, tag, cls] of tree) {
+  const ic = k === 'ts' ? '<span class="ic" style="color:#3178c6;font:700 9px -apple-system">TS</span>' :
+    k === 'json' ? '<span class="ic" style="color:#cbcb41;font:700 11px -apple-system">{}</span>' :
+    k === 'md' ? '<span class="ic codicon codicon-markdown" style="color:#519aba"></span>' :
+    k.startsWith('folder') ? `<span class="codicon codicon-chevron-${k === 'folder' ? 'right' : 'down'}" style="font-size:14px"></span>` :
+    '<span class="ic codicon codicon-file" style="color:#9d9d9d"></span>';
+  el.insertAdjacentHTML('beforeend', `<div class="${cls}" style="padding-left:${8 + d * 12}px">${ic}<span>${n}</span>${tag ? `<span class="tag">${tag}</span>` : ''}</div>`);
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+<script>
+const code = `import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { Fan } from './Fan'
+import { Lights } from './Lights'
+import { Hotspots, type Zone } from './Hotspots'
+import { ease, wait } from '../utils/timing'
+
+/** The underground lab: one scene, a slow power-on, then the fan takes over. */
+export class Lab {
+  readonly scene = new THREE.Scene()
+  readonly camera = new THREE.PerspectiveCamera(24, innerWidth / innerHeight, 0.1, 200)
+  private fan!: Fan
+  private lights!: Lights
+  private hotspots!: Hotspots
+  private clock = new THREE.Clock()
+
+  constructor(private renderer: THREE.WebGLRenderer) {
+    this.scene.fog = new THREE.FogExp2(0x0b0d10, 0.035)
+    this.camera.position.set(0.35, 1.35, 2.5)
+    this.camera.lookAt(0, 2.5, 22)
+  }
+
+  async load(url = '/models/lab.glb'): Promise<void> {
+    const gltf = await new GLTFLoader().loadAsync(url)
+    this.scene.add(gltf.scene)
+
+    this.fan = new Fan(gltf.scene.getObjectByName('fan')!)
+    this.lights = new Lights(gltf.scene, { exposure: -0.15, mix: 'D' })
+    this.hotspots = new Hotspots(this.camera, ['desk', 'projects', 'workshop'] satisfies Zone[])
+  }
+
+  /** Everything lights up in order: the fan is already turning. */
+  async powerOn(): Promise<void> {
+    this.fan.spin({ rpm: 42, rampUp: 0 })
+    for (const group of ['desk', 'screens', 'workshop', 'projects'] as const) {
+      await this.lights.fadeIn(group, { duration: 900, curve: ease.outExpo })
+      await wait(180)
+    }
+    this.hotspots.enable()
+  }
+
+  update(): void {
+    const dt = this.clock.getDelta()
+    this.fan.update(dt)
+    this.hotspots.update(dt)
+    this.renderer.render(this.scene, this.camera)
+  }
+}
+`;
+require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs' } });
+require(['vs/editor/editor.main'], function () {
+  monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({ noSemanticValidation: true, noSyntaxValidation: true, noSuggestionDiagnostics: true });
+  monaco.editor.defineTheme('dark-modern', { base: 'vs-dark', inherit: true, rules: [], colors: {
+    'editor.background': '#1f1f1f', 'editorLineNumber.foreground': '#6e7681', 'editorLineNumber.activeForeground': '#cccccc',
+    'editor.lineHighlightBackground': '#2a2a2a80', 'editorGutter.background': '#1f1f1f', 'minimap.background': '#1f1f1f',
+    'editorIndentGuide.background1': '#404040', 'editor.selectionBackground': '#264f78' } });
+  const ed = monaco.editor.create(document.getElementById('ed'), {
+    value: code, language: 'typescript', theme: 'dark-modern', fontFamily: 'JetBrains Mono', fontSize: 13.5, lineHeight: 21,
+    minimap: { enabled: true, renderCharacters: true, scale: 1 }, scrollBeyondLastLine: false, renderLineHighlight: 'all',
+    cursorBlinking: 'solid', guides: { indentation: true, bracketPairs: true }, bracketPairColorization: { enabled: true },
+    stickyScroll: { enabled: false }, scrollbar: { verticalScrollbarSize: 14 }, padding: { top: 4 } });
+  ed.setPosition({ lineNumber: 37, column: 23 });
+  ed.revealLineNearTop(17);
+  ed.setScrollTop(16 * 21 - 6);
+  ed.focus();
+  setTimeout(() => { document.body.dataset.ready = '1'; }, 1200);
+});
+</script>
+</body>
+</html>
